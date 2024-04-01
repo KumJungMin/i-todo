@@ -1,6 +1,6 @@
 import { http, HttpHandler, HttpResponse } from 'msw';
 
-import type { Todo } from '../types/todo.d.ts';
+import type { Todo } from '../types/todo.ts';
 import { todosData, lastId } from './mock-data/todos.ts';
 
 let _lastId = lastId;

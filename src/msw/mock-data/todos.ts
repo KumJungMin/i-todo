@@ -1,4 +1,4 @@
-import type { Todo } from './types/todo.d.ts';
+import type { Todo } from './types/todo.ts';
 
 export const lastId = 2;
 export const todosData: Todo = [
