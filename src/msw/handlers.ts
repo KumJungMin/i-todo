@@ -8,26 +8,26 @@ const _todosData = todosData.slice();
 
 export const handlers: HttpHandler[] = [
   // GET /todos
-  http.get('/todos', () => {
-    return new HttpResponse(_todosData, { status: 200 });
+  http.get('http://localhost:5173/todos', () => {
+    return HttpResponse.json(_todosData, { status: 200 });
   }),
 
   // POST /todos
-  http.post('/todos', (req) => {
+  http.post('http://localhost:5173/todos', (req) => {
     const newTodo = { ...req.body, id: _lastId++ };
     _todosData.push(newTodo);
 
-    return new HttpResponse(newTodo, { status: 201 });
+    return HttpResponse.json(newTodo, { status: 201 });
   }),
 
   //  DELETE /todos/:id
-  http.delete('/todos/:id', (req) => {
+  http.delete('http://localhost:5173/todos/:id', (req) => {
     const id = req.params.id;
     const index = _todosData.findIndex((todo: Todo) => todo.id === Number(id));
 
-    if (index === -1) return HttpResponse.notFound();
+    if (index === -1) return HttpResponse.json(id, { status: 404 });
 
     _todosData.splice(index, 1);
-    return new HttpResponse(index, { status: 204 });
+    return HttpResponse.json(id, { status: 200 });
   }),
 ];
