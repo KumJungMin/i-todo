@@ -9,7 +9,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky",
-    "commit": "commit"
+    "commit": "commit",
+    "test": "vitest && npm run dev"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.2.1",
@@ -38,9 +39,12 @@
     "msw": "^2.2.13",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "prettier": "3.2.5",
     "sass": "^1.72.0",
-    "typescript": "^5.2.2"
+    "node-fetch": "^3.3.2",
+    "prettier": "3.2.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vitest": "^1.4.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
