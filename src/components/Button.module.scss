@@ -1,0 +1,37 @@
+// TODO: style 포맷팅
+@mixin default {
+  border: 0;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:disabled {
+    pointer-events: none;
+  }
+}
+
+// TODO: 반복문으로 변경
+.primary {
+  @include default;
+  background-color: #BC7FCD;
+  &:hover {
+    background-color: #c88bd9;
+  }
+}
+
+.secondary {
+  @include default;
+  background-color: #FB9AD1;
+  &:hover {
+    background-color: #ffb4df;
+  }
+}
+
+.danger {
+  @include default;
+  background-color: #FA7070;
+  &:hover {
+    background-color: #ff9393;
+  }
+}
