@@ -22,7 +22,7 @@ export const handlers: HttpHandler[] = [
 
   //  DELETE /todos/:id
   http.delete('http://localhost:5173/todos/:id', (req) => {
-    const id = req.params.id;
+    const id = Number(req.params.id);
     const index = _todosData.findIndex((todo: Todo) => todo.id === Number(id));
 
     if (index === -1) return HttpResponse.json(id, { status: 404 });
