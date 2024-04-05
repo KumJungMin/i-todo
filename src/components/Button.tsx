@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 // TODO: 반복문으로 변경 또는 최적화
-export const Button = {
+const Button = {
   Primary(props: ButtonProps) {
     const { onClick, label, disabled } = props;
     return (
@@ -48,3 +48,5 @@ Button.Danger.defaultProps = {
   disabled: false,
   onClick: () => {},
 };
+
+export default Button;
