@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <div>count: {count}</div>
-      <Button.Primary label="프라이머리" onClick={() => handleCount} disabled={true} />
+      <Button.Primary label="프라이머리" onClick={() => handleCount} disabled />
       <Button.Secondary label="프라이머리" onClick={() => handleCount} />
       <Button.Danger label="프라이머리" onClick={() => handleCount} />
     </div>
