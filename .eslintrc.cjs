@@ -1,4 +1,4 @@
-// TODO: ESlint 재정비 TODO: 프리티어 재정비 TODO: husky 재정비
+// TODO: husky 재정비
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
@@ -15,9 +15,9 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
+  },
+  parserOptions: {
+    project: ['./tsconfig.json'],
   },
 };
