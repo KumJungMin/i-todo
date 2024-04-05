@@ -3,30 +3,50 @@ import style from './Button.module.scss';
 interface ButtonProps {
   label: string;
   disabled?: boolean;
-  action?: () => void;
+  onClick?: () => void;
 }
 
 // TODO: 반복문으로 변경 또는 최적화
-export const Button = {
-  Primary: function (props: ButtonProps) {
+const Button = {
+  Primary(props: ButtonProps) {
+    const { onClick, label, disabled } = props;
     return (
-      <button type="button" className={style.primary} onClick={props.action} disabled={props.disabled}>
-        {props.label}
+      <button type="button" className={style.primary} onClick={onClick} disabled={disabled}>
+        {label}
       </button>
     );
   },
-  Secondary: function (props: ButtonProps) {
+  Secondary(props: ButtonProps) {
+    const { onClick, label, disabled } = props;
     return (
-      <button type="button" className={style.secondary} onClick={props.action} disabled={props.disabled}>
-        {props.label}
+      <button type="button" className={style.secondary} onClick={onClick} disabled={disabled}>
+        {label}
       </button>
     );
   },
-  Danger: function (props: ButtonProps) {
+  Danger(props: ButtonProps) {
+    const { onClick, label, disabled } = props;
     return (
-      <button type="button" className={style.danger} onClick={props.action} disabled={props.disabled}>
-        {props.label}
+      <button type="button" className={style.danger} onClick={onClick} disabled={disabled}>
+        {label}
       </button>
     );
   },
 };
+
+Button.Primary.defaultProps = {
+  disabled: false,
+  onClick: () => {},
+};
+
+Button.Secondary.defaultProps = {
+  disabled: false,
+  onClick: () => {},
+};
+
+Button.Danger.defaultProps = {
+  disabled: false,
+  onClick: () => {},
+};
+
+export default Button;
