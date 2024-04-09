@@ -1,8 +1,17 @@
+import {
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  describe,
+  test,
+  expect,
+} from 'vitest';
 import { setupServer } from 'msw/node';
-import { handlers } from './handlers';
 import fetch from 'node-fetch';
-import { todosData } from './mock-data/todos.ts';
-import {beforeAll, afterEach, afterAll, describe, test, expect} from 'vitest';
+
+import { handlers } from './handlers';
+import { todosData } from './mock-data/todos';
 
 /** setupServer
  * 테스트 환경에서 서버를 설정하는 함수
@@ -11,6 +20,8 @@ import {beforeAll, afterEach, afterAll, describe, test, expect} from 'vitest';
 const server = setupServer(...handlers);
 
 beforeAll(() => server.listen());
+
+beforeEach(() => server.resetHandlers());
 
 afterEach(() => server.resetHandlers());
 
@@ -43,7 +54,7 @@ describe('Todo API Tests', () => {
 
     // then
     expect(response.status).toBe(201);
-    expect(data.id).toEqual(2);
+    expect(data.id).toEqual(3);
   });
 
   test('DELETE /todos/:id', async () => {
