@@ -8,7 +8,7 @@
 
     /* 확장자 제외하고 자동 import */
     "paths": {
-      "*": ["*.js", "*.jsx", "*.ts", "*.tsx"]
+      "*": ["*.js", "*.jsx", "*.ts", "*.tsx"],
     },
 
     /* Bundler mode */
