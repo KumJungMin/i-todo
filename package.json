@@ -13,6 +13,8 @@
     "test": "vitest && npm run dev"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/user-event": "^14.5.2",
     "@vitejs/plugin-react": "^4.2.1",
     "msw": "^2.2.13",
     "react": "^18.2.0",
@@ -25,6 +27,7 @@
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
     "@commitlint/prompt-cli": "^19.2.0",
+    "@testing-library/react": "^15.0.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
@@ -38,6 +41,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "husky": "^9.0.11",
+    "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
     "node-fetch": "^3.3.2",
     "prettier": "3.2.5",
