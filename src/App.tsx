@@ -25,9 +25,9 @@ function App() {
       <div>valid: {String(inputEmits.valid)}</div>
       <Input placeholder="플레이스홀더" regexp="ONLY_TEXT" getInputValue={(v) => getInput(v)} />
       <div>count: {count}</div>
-      <Button.Primary label="프라이머리" onClick={() => handleCount} />
-      <Button.Secondary label="프라이머리" onClick={() => handleCount} />
-      <Button.Danger label="프라이머리" onClick={() => handleCount} />
+      <Button.Primary label="프라이머리" onClick={() => handleCount()} />
+      <Button.Secondary label="프라이머리" onClick={() => handleCount()} />
+      <Button.Danger label="프라이머리" onClick={() => handleCount()} />
     </div>
   );
 }

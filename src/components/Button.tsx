@@ -6,47 +6,33 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+interface DefaultButtonProps extends ButtonProps {
+  name: string;
+}
+
+function DefaultButton(props: DefaultButtonProps) {
+  const {
+    onClick, label, disabled = false, name,
+  } = props;
+
+  return (
+    <button type="button" className={style[name]} onClick={onClick} disabled={disabled}>
+      {label}
+    </button>
+  );
+}
+
 // TODO: 반복문으로 변경 또는 최적화
 const Button = {
   Primary(props: ButtonProps) {
-    const { onClick, label, disabled } = props;
-    return (
-      <button type="button" className={style.primary} onClick={onClick} disabled={disabled}>
-        {label}
-      </button>
-    );
+    return <DefaultButton {...props} name="primary" />;
   },
   Secondary(props: ButtonProps) {
-    const { onClick, label, disabled } = props;
-    return (
-      <button type="button" className={style.secondary} onClick={onClick} disabled={disabled}>
-        {label}
-      </button>
-    );
+    return <DefaultButton {...props} name="secondary" />;
   },
   Danger(props: ButtonProps) {
-    const { onClick, label, disabled } = props;
-    return (
-      <button type="button" className={style.danger} onClick={onClick} disabled={disabled}>
-        {label}
-      </button>
-    );
+    return <DefaultButton {...props} name="danger" />;
   },
-};
-
-Button.Primary.defaultProps = {
-  disabled: false,
-  onClick: () => {},
-};
-
-Button.Secondary.defaultProps = {
-  disabled: false,
-  onClick: () => {},
-};
-
-Button.Danger.defaultProps = {
-  disabled: false,
-  onClick: () => {},
 };
 
 export default Button;

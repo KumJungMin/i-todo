@@ -11,27 +11,12 @@
   }
 }
 
-// TODO: 반복문으로 변경
-.primary {
-  @include default;
-  background-color: #BC7FCD;
-  &:hover {
-    background-color: #c88bd9;
-  }
-}
-
-.secondary {
-  @include default;
-  background-color: #FB9AD1;
-  &:hover {
-    background-color: #ffb4df;
-  }
-}
-
-.danger {
-  @include default;
-  background-color: #FA7070;
-  &:hover {
-    background-color: #ff9393;
+@each $name, $color in (primary, #BC7FCD), (secondary, #FB9AD1), (danger, #FA7070) {
+  .#{$name} {
+    @include default;
+    background-color: $color;
+    &:hover {
+      background-color: lighten($color, 10%);
+    }
   }
 }
