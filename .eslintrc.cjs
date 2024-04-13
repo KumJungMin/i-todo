@@ -20,7 +20,8 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off', // 정적 값과 동적 값을 같은 라인에서 사용하지 못하는 규칙
     'react/require-default-props': 'off', // props가 옵션일 때, default 값을 선언해야하는 규칙
     'no-underscore-dangle': 'off', // underscore 변수 선언 못하게하는 규칙
-    '@typescript-eslint/naming-convention': 'off' // underscore 변수 선언 못하게하는 규칙
+    '@typescript-eslint/naming-convention': 'off', // underscore 변수 선언 못하게하는 규칙
+    'react/jsx-props-no-spreading': 'off' // props spread 문법 금지 규칙
   },
   parserOptions: {
     project: ['./tsconfig.json'],
